@@ -1,53 +1,68 @@
-# calculator.py
+def add(x, y):
+    return x + y
 
-def add(a, b):
-    return a + b
+def subtract(x, y):
+    return x - y
 
-def subtract(a, b):
-    return a - b
+def multiply(x, y):
+    return x * y
 
-def multiply(a, b):
-    return a * b
+def divide(x, y):
+    if y == 0:
+        raise ZeroDivisionError("Cannot divide by zero")  # Handle division by zero
+    return x / y
 
-def divide(a, b):
-    if b == 0:
-        return "Cannot divide by zero!"
-    return a / b
+from IPython.display import display, Markdown
 
-def calculator():
-    print("Simple Calculator")
-    print("Operations:")
-    print("1. Addition (+)")
-    print("2. Subtraction (-)")
-    print("3. Multiplication (*)")
-    print("4. Division (/)")
-    
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    if y == 0:
+        raise ZeroDivisionError("Cannot divide by zero")
+    return x / y
+
+def calculate():
+    """Enhanced calculator for Jupyter"""
     while True:
+        display(Markdown("### Simple Calculator"))
+        display(Markdown("**Operations:**  \n1. Addition (+)  \n2. Subtraction (-)  \n3. Multiplication (*)  \n4. Division (/)"))
+        
         try:
-            num1 = float(input("Enter first number: "))
-            num2 = float(input("Enter second number: "))
-            operation = input("Enter operation (1-4 or +,-,*,/): ")
+            num1 = float(input("First number: "))
+            num2 = float(input("Second number: "))
+            op = input("Operation (1-4 or +,-,*,/): ").strip()
             
-            if operation in ("1", "+"):
-                print(f"Result: {num1} + {num2} = {add(num1, num2)}")
-            elif operation in ("2", "-"):
-                print(f"Result: {num1} - {num2} = {subtract(num1, num2)}")
-            elif operation in ("3", "*"):
-                print(f"Result: {num1} * {num2} = {multiply(num1, num2)}")
-            elif operation in ("4", "/"):
-                print(f"Result: {num1} / {num2} = {divide(num1, num2)}")
+            if op in ("1", "+"):
+                res = add(num1, num2)
+                display(Markdown(f"**Result:** {num1} + {num2} = {res}"))
+            elif op in ("2", "-"):
+                res = subtract(num1, num2)
+                display(Markdown(f"**Result:** {num1} - {num2} = {res}"))
+            elif op in ("3", "*"):
+                res = multiply(num1, num2)
+                display(Markdown(f"**Result:** {num1} × {num2} = {res}"))
+            elif op in ("4", "/"):
+                res = divide(num1, num2)
+                display(Markdown(f"**Result:** {num1} ÷ {num2} = {res}"))
             else:
-                print("Invalid operation. Please try again.")
+                display(Markdown("⚠️ **Invalid operation**"))
                 
-            another = input("Perform another calculation? (y/n): ").lower()
-            if another != 'y':
-                print("Goodbye!")
+            if input("Continue? (y/n): ").lower() != 'y':
+                display(Markdown("**Calculator closed**"))
                 break
                 
         except ValueError:
-            print("Invalid input. Please enter numbers only.")
+            display(Markdown("⚠️ **Please enter valid numbers**"))
         except Exception as e:
-            print(f"An error occurred: {e}")
+            display(Markdown(f"⚠️ **Error:** {e}"))
 
+# Run in Jupyter
 if __name__ == "__main__":
-    calculator()
+    calculate()
