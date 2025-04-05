@@ -17,7 +17,6 @@ Welcome to my repository! This contains Python-based mini-projects developed dur
 - [Tasks](#-tasks)
 - [Technologies Used](#-technologies-used)
 - [Screenshots](#-screenshots)
-- [License](#-license)
 - [Contact](#-contact)
 
 ## 🛠️ Tasks
@@ -58,10 +57,16 @@ Standard Python libraries:
 - sys
 
 ### 📸 Screenshots
-
-
-
-
+## To-Do List
+![todo list](https://github.com/user-attachments/assets/ff097275-8be8-42e8-ab22-1ed2351e1299)
+## Simple Calculator
+![calculator](https://github.com/user-attachments/assets/0aecc6fd-24ef-45a3-822d-339c16cfeeea)
+## Password Generator
+![password generator](https://github.com/user-attachments/assets/72d7a0f8-1dc0-41a0-b12a-c4838ab5707b)
+## To-Do List
+![todo list](https://github.com/user-attachments/assets/ff097275-8be8-42e8-ab22-1ed2351e1299)
+## Contact Book Menu 
+![comtactbook](https://github.com/user-attachments/assets/ed096539-3d42-4473-9260-ab894b6fd068)
 
 
 📧 Contact
