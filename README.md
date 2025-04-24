@@ -2,71 +2,38 @@
 
 Welcome to my repository! This contains Python-based mini-projects developed during my **CODSOFT Internship Program**. Each project reflects practical Python skills including logic building, user input handling, and problem-solving.
 
----
+# 🌸 Cute Girly Calculator - CodSoft Task 1
 
-## 📂 Projects Overview
+A pink-themed, playful GUI calculator built with Python and Tkinter.
 
-| File Name             | Project Description                                                                 |
-|-----------------------|--------------------------------------------------------------------------------------|
-| `calculator.py`       | A basic calculator that supports addition, subtraction, multiplication, and division |
-| `contact_book.py`     | A simple CLI-based contact book to store, search, and delete contacts                |
-| `password_generator.py`| Generates strong random passwords based on user-defined length and complexity       |
-| `todo_list.py`        | A command-line To-Do List_
+![calci1](https://github.com/user-attachments/assets/71f2c0af-6c17-40df-aa50-b5ad42dc7974)
 
-## 📋 Table of Contents
-- [Tasks](#-tasks)
-- [Technologies Used](#-technologies-used)
-- [Screenshots](#-screenshots)
-- [Contact](#-contact)
+![calci2](https://github.com/user-attachments/assets/0d42979b-c7fa-47e6-825a-a5dca2fb20fe)
 
-## 🛠️ Tasks
+![calci3](https://github.com/user-attachments/assets/665f19d6-f73a-42be-aa8d-2a737efd26eb)
 
-### 1. To-Do List Application
-A command-line task manager that allows users to:
-- Add new tasks
-- View all tasks
-- Mark tasks as completed
-- Delete tasks
+![calci4](https://github.com/user-attachments/assets/4072e817-4e08-4277-889a-c6d574f8b360)
 
-### 2. Calculator
-A simple calculator that performs:
-- Addition
-- Subtraction
-- Multiplication
-- Division
+![calci5](https://github.com/user-attachments/assets/1b11f94b-fd4a-43fb-98f2-84a95c023321)
 
-### 3. Password Generator
-Generates secure passwords with options for:
-- Custom length
-- Complexity levels (letters only, letters+numbers, letters+numbers+symbols)
-- Strength indicator
+![calci6](https://github.com/user-attachments/assets/e5cdd6fb-7e4d-465c-bb1a-edcbaf534874)
+![calci7](https://github.com/user-attachments/assets/e0ca6555-0da8-45cc-b1b0-64d398ec37ed)
+![calci8](https://github.com/user-attachments/assets/1d0ea4cf-c044-4fad-a23c-5ba940af58f5)
 
-### 4. Contact Book
-A digital contact manager with:
-- Contact storage (name, phone, email, address)
-- Search functionality
-- Contact editing
-- Contact deletion
+![calci9](https://github.com/user-attachments/assets/a9f0ebea-3094-42cd-b978-a3fd4195139e)
 
-### Technologies Used
-(Python 3)
+## ✨ Features
+- Pink UI with rounded buttons and emojis (÷, ×, 💖)
+- Error handling with cute messages ("Oops! 💔")
+- Secret **💖 button** that shows "Love You!"
+- Responsive design
 
-Standard Python libraries:
-- random
-- string
-- sys
+## 🛠️ Tech Stack
+- Python 3
+- Tkinter (GUI)
+- OOP principles
 
-### 📸 Screenshots
-## To-Do List
-![todo list](https://github.com/user-attachments/assets/ff097275-8be8-42e8-ab22-1ed2351e1299)
-## Simple Calculator
-![calculator](https://github.com/user-attachments/assets/0aecc6fd-24ef-45a3-822d-339c16cfeeea)
-## Password Generator
-![password generator](https://github.com/user-attachments/assets/72d7a0f8-1dc0-41a0-b12a-c4838ab5707b)
-## To-Do List
-![todo list](https://github.com/user-attachments/assets/ff097275-8be8-42e8-ab22-1ed2351e1299)
-## Contact Book Menu 
-![comtactbook](https://github.com/user-attachments/assets/ed096539-3d42-4473-9260-ab894b6fd068)
+
 
 
 📧 Contact
