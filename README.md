@@ -55,7 +55,7 @@ A pink-themed, playful GUI calculator built with Python and Tkinter.
 ![todo7](https://github.com/user-attachments/assets/027205ee-dc33-4531-a865-d00f56df20f5)
 
 
-# Password Generator CodSoft Task 1
+# Password Generator CodSoft Task 3
 
 ![pg7](https://github.com/user-attachments/assets/a6534482-f0bd-4aa3-8fb7-e74b563fd1e0)
 
