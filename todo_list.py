@@ -1,73 +1,95 @@
-# todo_list.py
+import tkinter as tk
+from tkinter import messagebox
 
-class TodoList:
-    def __init__(self):
-        self.tasks = []
-
-    def add_task(self, task):
-        self.tasks.append({"task": task, "completed": False})
-        print(f"Task '{task}' added successfully!")
-
-    def view_tasks(self):
-        if not self.tasks:
-            print("No tasks in the list.")
-        else:
-            print("\nTo-Do List:")
-            for i, task in enumerate(self.tasks, 1):
-                status = "✓" if task["completed"] else " "
-                print(f"{i}. [{status}] {task['task']}")
-
-    def mark_completed(self, task_num):
-        try:
-            if 1 <= task_num <= len(self.tasks):
-                self.tasks[task_num-1]["completed"] = True
-                print(f"Task {task_num} marked as completed!")
-            else:
-                print("Invalid task number.")
-        except ValueError:
-            print("Please enter a valid number.")
-
-    def delete_task(self, task_num):
-        try:
-            if 1 <= task_num <= len(self.tasks):
-                removed_task = self.tasks.pop(task_num-1)
-                print(f"Task '{removed_task['task']}' deleted successfully!")
-            else:
-                print("Invalid task number.")
-        except ValueError:
-            print("Please enter a valid number.")
-
-def main():
-    todo = TodoList()
+class KawaiiToDo:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("(っ◕‿◕)っ To-Do List")
+        self.root.geometry("300x400")
+        self.root.configure(bg="#FFE6EE")  # Pink background
+        
+        # Cute font (change to any kawaii font you have installed)
+        self.font = ("Comic Sans MS", 12)
+        
+        # Header
+        self.header = tk.Label(root, 
+                             text="★彡 Your Kawaii Tasks 彡★", 
+                             font=("Comic Sans MS", 14, "bold"), 
+                             bg="#FFB6C1", fg="white")
+        self.header.pack(fill=tk.X, pady=10)
+        
+        # Task entry
+        self.task_entry = tk.Entry(root, 
+                                 font=self.font, 
+                                 bg="white", 
+                                 relief=tk.FLAT)
+        self.task_entry.pack(pady=10, padx=20, fill=tk.X)
+        
+        # Add button
+        self.add_btn = tk.Button(root, 
+                               text="(◕‿◕) Add", 
+                               command=self.add_task,
+                               bg="#FFB6C1", 
+                               fg="white",
+                               relief=tk.FLAT,
+                               font=self.font)
+        self.add_btn.pack(pady=5)
+        
+        # Task list
+        self.task_list = tk.Listbox(root, 
+                                  font=self.font, 
+                                  bg="white",
+                                  selectbackground="#FFB6C1",
+                                  relief=tk.FLAT)
+        self.task_list.pack(pady=10, padx=20, fill=tk.BOTH, expand=True)
+        
+        # Complete and Delete buttons
+        btn_frame = tk.Frame(root, bg="#FFE6EE")
+        btn_frame.pack(pady=10)
+        
+        self.complete_btn = tk.Button(btn_frame, 
+                                    text="(✓) Done", 
+                                    command=self.complete_task,
+                                    bg="#98FB98",  # Pastel green
+                                    font=self.font)
+        self.complete_btn.pack(side=tk.LEFT, padx=5)
+        
+        self.delete_btn = tk.Button(btn_frame, 
+                                  text="(×) Delete", 
+                                  command=self.delete_task,
+                                  bg="#FF9999",  # Pastel red
+                                  font=self.font)
+        self.delete_btn.pack(side=tk.LEFT, padx=5)
     
-    while True:
-        print("\nTo-Do List Application")
-        print("1. Add Task")
-        print("2. View Tasks")
-        print("3. Mark Task as Completed")
-        print("4. Delete Task")
-        print("5. Exit")
-        
-        choice = input("Enter your choice (1-5): ")
-        
-        if choice == "1":
-            task = input("Enter the task: ")
-            todo.add_task(task)
-        elif choice == "2":
-            todo.view_tasks()
-        elif choice == "3":
-            todo.view_tasks()
-            task_num = int(input("Enter task number to mark as completed: "))
-            todo.mark_completed(task_num)
-        elif choice == "4":
-            todo.view_tasks()
-            task_num = int(input("Enter task number to delete: "))
-            todo.delete_task(task_num)
-        elif choice == "5":
-            print("Goodbye!")
-            break
+    def add_task(self):
+        task = self.task_entry.get()
+        if task:
+            self.task_list.insert(tk.END, f"○ {task}")
+            self.task_entry.delete(0, tk.END)
         else:
-            print("Invalid choice. Please try again.")
+            messagebox.showwarning("(｡•́︿•̀｡)", "Please enter a task!")
+    
+    def complete_task(self):
+        try:
+            index = self.task_list.curselection()[0]
+            task = self.task_list.get(index)
+            if task.startswith("○"):
+                self.task_list.delete(index)
+                self.task_list.insert(index, f"✓ {task[2:]}")
+            else:
+                self.task_list.delete(index)
+                self.task_list.insert(index, f"○ {task[2:]}")
+        except:
+            messagebox.showwarning("(ﾉ◕ヮ◕)ﾉ", "Please select a task first!")
+    
+    def delete_task(self):
+        try:
+            index = self.task_list.curselection()[0]
+            self.task_list.delete(index)
+        except:
+            messagebox.showwarning("(╥﹏╥)", "Please select a task to delete!")
 
 if __name__ == "__main__":
-    main()
+    root = tk.Tk()
+    app = KawaiiToDo(root)
+    root.mainloop()
